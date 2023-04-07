@@ -24,11 +24,12 @@ body * {
   }
   
   .container {
-      padding-top: 7rem;
+      padding-top: 3rem;
       align-items: center;
       overflow: hidden; /* Para evitar que a imagem vaze para fora da caixa */
       width: 30%;
-      margin: 0 auto;
+      margin-left: 500px;
+      margin-right: auto;
     }
   
     .path{

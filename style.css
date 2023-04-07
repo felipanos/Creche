@@ -15,11 +15,12 @@ h5{
 }
 
 .container {
-    padding-top: 7rem;
+  padding-top: 3rem;
     align-items: center;
     overflow: hidden; /* Para evitar que a imagem vaze para fora da caixa */
     width: 30%;
-    margin: 0 auto;
+    margin-left: 500px;
+    margin-right: auto;
   }
 
   .esqueceu{
@@ -35,14 +36,15 @@ h5{
   }
 
   #form{
-    margin-left: 450px;
-    width: 25rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 26rem;
     border-radius: 12px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 17rem;
+    height: 19rem;
     background-color:#F5F5F5
   };
 
@@ -93,6 +95,7 @@ h5{
   }
 
   .termo{
+    margin-left: 50px;
     text-align: center;
     margin-right: 4rem;
     font-family: arial;
