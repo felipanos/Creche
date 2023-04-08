@@ -1,0 +1,185 @@
+    body{
+    background-color:#F5F5F5;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+    .container {
+    background-color:#F5F5F5;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    margin-top: 30px;
+}
+
+  #img-1 {
+    margin-left: 25px;
+    max-width: 100px;
+    max-height: 200px;
+    object-fit: cover;
+  }
+
+  #img-2 {
+    margin-left: 50px;
+    max-width: 100px;
+    max-height: 200px;
+    object-fit: cover;
+  }
+
+  #img-3 {
+    margin-left: 10px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-right: 20px;
+    max-width: 100px;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+  h5 {
+  font-family: arial;
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.texto{
+    margin-top: 15px;
+    margin-left:980px;
+}
+
+.carousel {
+    width: 100%;
+    max-width: 1800px;
+    margin:0 auto;
+  }
+
+/* O código abaixo é responsável pelo container principal*/
+
+  .carousel-container {
+    background-color:#F5F5F5;
+    margin-top: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .carousel-slide {
+    display: flex;
+    width: 100%;
+    transition: transform 0.4s ease-in-out;
+  }
+  
+/* carrossel com os 3 itens */
+
+  .carousel-item {  
+  height: 600px;
+  background-color:#F5F5F5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  padding: 30px;  
+  border-top: 2px solid #009CDE;
+  border-bottom: 2px solid #009CDE;
+  border-radius: 12px;
+  }
+  
+  .carousel-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .carousel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+  }
+  
+  .carousel-caption h3 {
+    margin-top: 0;
+  }
+  
+  .carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  .carousel-prev {
+    left: 10px;
+  }
+  
+  .carousel-next {
+    right: 10px;
+  }
+  
+  .megafone{
+    width: 30px;
+    margin-left: -300px;
+  }
+
+  .image-title {
+    margin-right: 10px;
+    display: flex;
+    align-items: center; /* alinha verticalmente no centro */
+    justify-content: space-between; /* alinha horizontalmente com espaço entre */
+  }
+  
+  .image-title img {
+    margin-right: 10px; /* adiciona um espaço entre a imagem e o título */
+    order: 1; /* define a ordem da imagem para ser exibida primeiro */
+  }
+  
+  .image-title p {
+    margin-left: 20px;
+    order: 2; /* define a ordem do título para ser exibido depois da imagem */
+  }
+
+  .img-large-1{
+    position: relative;
+    top: 80px; /* ou qualquer valor que desejar */
+  }
+
+  .img-large-1:hover {
+    background-color: #DF0209;
+    cursor: pointer;
+    ;
+  }
+
+  .img-large-2{
+    position: relative;
+    top: 50px; /* ou qualquer valor que desejar */
+  }
+
+  .img-large-2:hover {
+    background-color: #DF0209;
+    cursor: pointer;
+  }
+
+  .img-large-3{
+    position: relative;
+    bottom: 20px; /* ou qualquer valor que desejar */
+  }
+
+  .img-large-3:hover {
+    background-color: #DF0209;
+     cursor: pointer;
+  }
