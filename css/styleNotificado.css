@@ -20,7 +20,7 @@ a{
 
 .container {
   white-space: nowrap;
-  margin-top: 10rem;
+  margin-top: 4rem;
   align-items: center;
   justify-content: center;
   overflow: hidden; /* Para evitar que a imagem vaze para fora da caixa */
@@ -81,7 +81,7 @@ a{
   .path{
     width: 10rem;
       position: absolute;
-      bottom: 0px;
+      bottom: 20;
       left: 50%;
       transform: translateX(-50%);
   }
