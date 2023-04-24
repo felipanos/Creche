@@ -60,21 +60,47 @@ p{
   margin-left: 235px;
   border-radius: 50%;
   z-index: 1; /* definir z-index maior que o da classe .sidenav */
-}
+  border: 1px solid;
+  box-shadow: 1px 2px #888888;
+} 
 .box {
   box-shadow: 60px -16px rgb(17, 19, 19);
 }
 
 .iten-menu p{
-  right: 0;
   padding-right: 80px;
   margin-top: 40px;
+  margin-left: 10px;
   float: right;
 }
 
+.footer-menu {
+  margin-top: 750px;
+}
 
+.footer-menu img{
+  width: 40px;
+  height: 40px;
+  margin-top: 30px;
+  margin-left: 10px;
+  margin-right: 5px;
+}
 
+.footer-menu a{
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  float: left;
+}
 
+.sair{
+  margin-left: 100px;
+}
+
+.copyright img{
+  width: 10px;
+  height: 10px;}
 
 
 
@@ -87,7 +113,7 @@ p{
   height: 100%; /* 100% Full-height */
   width: 0; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
+  z-index: 4; /* Stay on top */
   top: 0;
   left: 0;
   background-color: #ffffff;
@@ -105,6 +131,7 @@ p{
   color: #818181;
   display: block;
   transition: 0.3s;
+  float: left;
 }
 .iten-menu img {
   width: 40px;
