@@ -60,12 +60,12 @@ p{
   margin-left: 235px;
   border-radius: 50%;
   z-index: 1; /* definir z-index maior que o da classe .sidenav */
-  border: 1px solid;
-  box-shadow: 1px 2px #888888;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 5px #888888;
 } 
 .box {
   box-shadow: 60px -16px rgb(17, 19, 19);
-}
+} 
 
 .iten-menu p{
   padding-right: 80px;
@@ -75,12 +75,12 @@ p{
 }
 
 .footer-menu {
-  margin-top: 750px;
+  margin-top: auto;
+  clear:both;
+  width:0;
 }
 
 .footer-menu img{
-  width: 40px;
-  height: 40px;
   margin-top: 30px;
   margin-left: 10px;
   margin-right: 5px;
@@ -91,18 +91,39 @@ p{
   color: #818181;
   display: block;
   transition: 0.3s;
-  float: left;
+}
+
+.footer-menu p{
+  margin-left: 10px;
 }
 
 .sair{
-  margin-left: 100px;
+  margin-right: 10px; /* adiciona uma margem à direita da imagem para separá-la do texto */
 }
 
-.copyright img{
-  width: 10px;
-  height: 10px;}
+.sair img{
+  float: left;
+  margin-right: 10px; /* adiciona uma margem à direita da imagem para separá-la do texto */
+}
 
+.sair p{
+  float: left; /* faz a imagem flutuar à esquerda */
+}
 
+.copyright {
+  bottom: 0;
+  margin-left: 200px; /* adiciona uma margem à direita da imagem para separá-la do texto */
+}
+
+.copyright p{
+  float: left; /* faz o texto flutuar à direita */
+}
+
+.copyright img {
+  float: left; /* faz a imagem flutuar à esquerda */
+  height: 20px;
+  width: 20px;
+}
 
 
 
@@ -123,6 +144,7 @@ p{
   border-radius: 12px;
   overflow-x: hidden; /* Disable horizontal scroll */
   transition: 0.2s ease-in;
+  overflow: hidden;
 }
 
 /* The navigation menu links */
@@ -138,7 +160,7 @@ p{
   height: 40px;
   margin-top: 30px;
   margin-left: 10px;
-  margin-right: 5px;
+  margin-right: 10px;
 }
 .iten-menu #text{
   margin-bottom: 10px;
@@ -161,7 +183,7 @@ p{
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
-  transition: margin-left .5s;
+  transition: margin-left 0.1s;
   margin: 10px 10px 10px 10px;
 }
 
