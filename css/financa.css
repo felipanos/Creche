@@ -55,20 +55,57 @@
     max-width: 80px;
     max-height: 80px;
   }
-  .seta-azul{
-    margin-left: 235px;
-    border-radius: 50%;;
+  .iten-menu p{
+    padding-right: 80px;
+    margin-top: 40px;
+    margin-left: 10px;
+    float: left;
   }
-  .box {
-    box-shadow: 60px -16px rgb(17, 19, 19);
+  
+  .iten-menu img{
+  float: left;
   }
   
+  .sair{
+    width: 35px;
+    height: 35px;
+  }
   
+  .footer-menu{
+    position: absolute;
+    bottom: 90px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-left:30px;
+    font-size:15px
+  }
   
+  .footer-menu p{
+  float: left;
+  margin-left: 10px;
+  margin-top: 5px;
+  align-items: center;
+  justify-content: center;
+  }
   
+  .footer-menu img{
+    float: left;
+  }
   
+  .copyriht {
+    margin: 20px;
+    bottom: 0;
+    display:flex;
+    align-items:center;
+    flex-direction: row;
+    position: absolute;
+  }
   
-  
+  .copyriht p {
+    margin-left:5px;
+  }
   
   
   
@@ -80,30 +117,32 @@
     height: 100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
+    z-index: 4; /* Stay on top */
     top: 0;
     left: 0;
     background-color: #ffffff;
+    border-top: 1px solid #009CDE;
     border-right: 1px solid #009CDE;
+    border-bottom: 1px solid #009CDE;
     border-radius: 12px;
     overflow-x: hidden; /* Disable horizontal scroll */
-    transition: 0.2s ease-in;
+    transition: all 0.3s ease;    overflow: hidden;
   }
   
   /* The navigation menu links */
   .sidenav a {
-    text-decoration: none;
     font-size: 20px;
     color: #818181;
     display: block;
     transition: 0.3s;
+    float: left;
   }
   .iten-menu img {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     margin-top: 30px;
     margin-left: 10px;
-    margin-right: 15px;
+    margin-right: 10px;
   }
   .iten-menu #text{
     margin-bottom: 10px;
@@ -126,7 +165,7 @@
   
   /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
   #main {
-    transition: margin-left .5s;
+    transition: margin-left 0.1s;
     margin: 10px 10px 10px 10px;
   }
   
@@ -175,7 +214,7 @@
     font-weight: bold;
   }
 
-  .cards{
+  .cards{ 
     width:300px;
     height:150px;
     border-radius: 12px;
@@ -183,9 +222,7 @@
     position: relative;
     justify-content: center;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    margin: 0 10px;
     cursor: pointer;
   }
 
@@ -193,18 +230,8 @@
     background: #fac24a;
   }
 
-  .cards img{
-    object-fit: contain;
-    display: block; /* adiciona essa linha para alinhar horizontalmente com margin */
-    margin: auto; /* adiciona essa linha para centralizar a imagem */
-    justify-content: center;
-    align-items: center;
-  }
-
   .cards p {
-    text-align: center;
-    display: flex;
-    align-items: center;
+    margin: 10px;
   }
 
 
@@ -212,7 +239,5 @@
     margin-left: 200px;
     width: 1000px;
     justify-content: space-between;
-    position: relative;
     display:flex;
-    align-items: center;
   }

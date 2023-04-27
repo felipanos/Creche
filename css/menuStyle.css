@@ -55,75 +55,59 @@ p{
   max-width: 80px;
   max-height: 80px;
 }
-.seta-azul{
-  position: absolute;
-  margin-left: 235px;
-  border-radius: 50%;
-  z-index: 1; /* definir z-index maior que o da classe .sidenav */
-  background-color: #ffffff;
-  box-shadow: 2px 2px 5px #888888;
-} 
-.box {
-  box-shadow: 60px -16px rgb(17, 19, 19);
-} 
-
+ 
 .iten-menu p{
   padding-right: 80px;
   margin-top: 40px;
   margin-left: 10px;
-  float: right;
+  float: left;
 }
 
-.footer-menu {
-  margin-top: auto;
-  clear:both;
-  width:0;
-}
-
-.footer-menu img{
-  margin-top: 30px;
-  margin-left: 10px;
-  margin-right: 5px;
-}
-
-.footer-menu a{
-  font-size: 20px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-.footer-menu p{
-  margin-left: 10px;
+.iten-menu img{
+float: left;
 }
 
 .sair{
-  margin-right: 10px; /* adiciona uma margem à direita da imagem para separá-la do texto */
+  width: 35px;
+  height: 35px;
 }
 
-.sair img{
+.footer-menu{
+  position: absolute;
+  bottom: 90px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-left:30px;
+  font-size:15px
+}
+
+.footer-menu p{
+float: left;
+margin-left: 10px;
+margin-top: 5px;
+align-items: center;
+justify-content: center;
+}
+
+.footer-menu img{
   float: left;
-  margin-right: 10px; /* adiciona uma margem à direita da imagem para separá-la do texto */
 }
 
-.sair p{
-  float: left; /* faz a imagem flutuar à esquerda */
-}
-
-.copyright {
+.copyriht {
+  margin: 20px;  
   bottom: 0;
-  margin-left: 200px; /* adiciona uma margem à direita da imagem para separá-la do texto */
+  display:flex;
+  align-items:center;
+  flex-direction: row;
+  position: absolute;
 }
 
-.copyright p{
-  float: left; /* faz o texto flutuar à direita */
+.copyriht p {
+  margin-left:5px;
 }
 
-.copyright img {
-  float: left; /* faz a imagem flutuar à esquerda */
-  height: 20px;
-  width: 20px;
-}
 
 
 
@@ -143,7 +127,7 @@ p{
   border-bottom: 1px solid #009CDE;
   border-radius: 12px;
   overflow-x: hidden; /* Disable horizontal scroll */
-  transition: 0.2s ease-in;
+  transition: all 0.3s ease;
   overflow: hidden;
 }
 
@@ -156,8 +140,8 @@ p{
   float: left;
 }
 .iten-menu img {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   margin-top: 30px;
   margin-left: 10px;
   margin-right: 10px;
@@ -283,6 +267,13 @@ input[type="checkbox"] {
   cursor: pointer;
   width: auto;
   height: auto;
+}
+
+.footer {
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
 }
 
 .decoracao{
