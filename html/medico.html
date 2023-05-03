@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/menuStyle.css">
+    <link rel="stylesheet" href="../css/medico.css">
     <title>Creche</title>
 </head>
 <body>
@@ -31,7 +31,7 @@
     <a href="#"><img src="../imagens/icon calendario cinza.png"><p>Calendario</p></a>
     <a href="financa.html"><img src="../imagens/icon financeiro cinza.png"><p>Financeiro</p></a>
     <a href="menuPrincipal.html"><img src="../imagens/icon home azul.png"><p>Home</p></a>
-    <a href="medico.html"><img src="../imagens/icon saude cinza.png"><p>Saude</p></a>
+    <a href="#"><img src="../imagens/icon saude cinza.png"><p>Saude</p></a>
     <a href="#"><img src="../imagens/icon user cinza.png"><p>Perfil</p></a>
   </div>
     <!--Footer do menu lateral-->
@@ -44,58 +44,47 @@
   </div>
 </div>
 
+      <!--Ficha, Atestado e cardápio-->
 
-<!-- Posters -->
-  <div class="posters">
-    <div class="titulo-1">
-      <img src="../imagens/megafone.png"> <p>Dia Mundial da Água</p>
+      <div class="invisible">
+        <div class="cards" id="ficha-medica">
+          <img src="../imagens/icon ficha medica.png">
+          <p>Ficha Médica</p>
+          <div class="texto-expandido">
+            <h1>alou</h1>
+            <div class="detalhe">
+                <div class="info"><img src="../imagens/boneco.png"><p>Atura e peso</p></div><div class="data">fev de 2023</div></div>
+            <div class="detalhe">
+                <div class="info"><img src="../imagens/boneco.png"></div> <div class="data">fev de 2023</div></div>
+            <div class="detalhe">
+                <div class="info"><img src="../imagens/boneco.png"></div> <div class="data">fev de 2023</div></div>
+            <div class="detalhe">
+                <div class="info"><img src="../imagens/boneco.png"></div> <div class="data">fev de 2023</div></div>
+            <div class="detalhe">
+                <div class="info"><img src="../imagens/boneco.png"></div> <div class="data">fev de 2023</div></div>
+            <div class="detalhe">
+                <div class="info"><img src="../imagens/boneco.png"></div> <div class="data">fev de 2023</div></div>
+          </div>
+        </div>
+
+    <div class="cards">
+      <img src="../imagens/icon atestados.png">
+      <p>Atestado</p>
+      <div class="texto-expandido">
+        <p>Aqui está o texto expandido para a atestado.</p>
+      </div>
     </div>
-      <div class="imagem-centro">
-        <img src="../imagens/luis.jpeg">
-      </div>
-        <div class="descricao">
-          <p>Hoje é dia de algo muito importante para todos nós!
-            O objetivo do Dia Mundial da Água é promover conscientização sobre a relevância da água para a nossa sobrevivência e de outros seres vivos.</p>
-        <div class="curtir">
-          <img src="../imagens/coracao.png" class="coracao"> <p>Curtir</p>
-        </div>
-        </div>
-      </div>
 
-  <div class="posters">
-    <div class="titulo-2">
-      <img src="../imagens/megafone.png" alt=""> <p>Dia internacional da  Mulher</p>
+    <div class="cards">
+      <img src="../imagens/icon cardapio.png">
+      <p>Cardápio</p>
+      <div class="texto-expandido">
+        <p>Aqui está o texto expandido para a Cardápio.</p>
+      </div>
     </div>
-      <div class="imagem-centro">
-        <img src="../imagens/luis.jpeg">
-      </div>
-        <div class="descricao">
-          <p>Nós da Jardim dos Sonhos viemos parabenizar todas as mulheres de dentro e fora da nossa instituição. Mas, principalmente a nossa grande equipe, composta quase que totalmente por excepcionais mulheres!</p>
-        <div class="curtir">
-          <img src="../imagens/coracao.png" class="coracao"> <p>Curtir</p>
-        </div>
-        </div>
-      </div>
+  </div>
 
-  <div class="posters">
-    <div class="titulo-3">
-      <img src="../imagens/megafone.png" alt=""> <p>Dia Mundial do Autismo</p>
-    </div>
-      <div class="imagem-centro">
-        <img src="../imagens/luis.jpeg">
-      </div>
-        <div class="descricao">
-          <p>🧩 2 de abril dia mundial do autismo 🧩<br>
-            Um dia especial para pessoas incríveis 💙</p>
-        <div class="curtir">
-          <img src="../imagens/coracao.png" class="coracao"> <p>Curtir</p>
-        </div>
-        </div>
-      </div>
-</div> 
-
-<!--Footer-->
-<div class="footer"></div>
+  <div class="footer"></div>
 
       <script>
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
@@ -112,6 +101,20 @@ function closeNav() {
   document.body.style.backgroundColor = "white";
 }
 
+// constante para os cards cards se abrirem
+
+const cards = document.querySelectorAll('.cards');
+
+cards.forEach(card => {
+  card.addEventListener('click', () => {
+    const textoExpandido = card.querySelector('.texto-expandido');
+    card.classList.toggle('expandido');
+    textoExpandido.classList.toggle('mostrar');
+    card.classList.toggle('card-normal'); // Adicione essa linha para alternar entre as classes
+  });
+});
+
+
         // // document.getElementById('img-1').addEventListener('click', function() {
         // // document.getElementById('menu-lateral').style.left = '0'; 
         // });
@@ -119,4 +122,3 @@ function closeNav() {
 
   
 </body>
-
