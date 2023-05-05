@@ -71,7 +71,15 @@
       <img src="../imagens/icon atestados.png">
       <p>Atestado</p>
       <div class="texto-expandido">
-        <p>Aqui está o texto expandido para a atestado.</p>
+        <div class="atestado">
+         <div class="box"><p><strong>Atestado de Aptidão Física</strong></p></div> 
+          <div class="meu-arquivo">
+            <p><strong>atestado_cardio.pdf</strong></p>
+          <a href="../imagens/luis.jpeg" target="_target">
+            <img src="../imagens/nuvem.png">
+          </a>
+        </div>
+      </div>
       </div>
     </div>
 
@@ -112,6 +120,16 @@ cards.forEach(card => {
     textoExpandido.classList.toggle('mostrar');
     card.classList.toggle('card-normal'); // Adicione essa linha para alternar entre as classes
   });
+});
+
+const card = document.querySelector('.cards');
+let count = 0;
+
+card.addEventListener('click', () => {
+  count++;
+  if (count === 9) {
+    card.classList.add('animate');
+  }
 });
 
 
