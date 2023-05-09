@@ -51,19 +51,56 @@
           <img src="../imagens/icon ficha medica.png">
           <p>Ficha Médica</p>
           <div class="texto-expandido">
-            <h1>alou</h1>
+            <h1>Resumo</h1>
             <div class="detalhe">
-                <div class="info"><img src="../imagens/boneco.png"><p>Atura e peso</p></div><div class="data">fev de 2023</div></div>
+              <div class="info">
+                <img src="../imagens/boneco.png">
+                <p class="altura-peso">Altura e peso</p>
+              </div>
+              <div class="centro-info">
+                <p class="numero"><strong>109</strong></p>
+                <p class="cm">cm</p>
+                <p class="numero"><strong>19</strong></p>
+                <div class="kg"><p>kg</p></div>
+              </div>
+              <div class="data">fev de 2023</div>
+            </div>
+
             <div class="detalhe">
-                <div class="info"><img src="../imagens/boneco.png"></div> <div class="data">fev de 2023</div></div>
+                <div class="info"><img src="../imagens/amendoim.png"><p>Alergias</p></div>
+                <div class="centro-info">
+                  <div class="alergias"><p>Não espeficicado</p></div>
+                </div> <div class="data">fev de 2023</div></div>
+              
             <div class="detalhe">
-                <div class="info"><img src="../imagens/boneco.png"></div> <div class="data">fev de 2023</div></div>
-            <div class="detalhe">
-                <div class="info"><img src="../imagens/boneco.png"></div> <div class="data">fev de 2023</div></div>
-            <div class="detalhe">
-                <div class="info"><img src="../imagens/boneco.png"></div> <div class="data">fev de 2023</div></div>
-            <div class="detalhe">
-                <div class="info"><img src="../imagens/boneco.png"></div> <div class="data">fev de 2023</div></div>
+                <div class="info"><img src="../imagens/pilula.png"><p>Medicamentos</p></div> 
+                <div class="centro-info">
+                  <div class="medicamentos"><p>Não espeficicado</p></div>
+                </div>
+                <div class="data">fev de 2023</div></div>
+            
+                <div class="detalhe">
+                <div class="info"><img src="../imagens/sangue.png"><p>Tipo Sanguíneo</p></div>
+                <div class="centro-info">
+                  <div class="sangue">
+                    <p class="o">O+</p>
+                  </div></div>
+                <div class="data">fev de 2023</div></div>
+           
+                <div class="detalhe">
+                <div class="info"><img src="../imagens/vacinacao.png"><p>Vacinas</p></div>
+                <div class="vacinas">
+                  <div class="sarampo"><p>Sarampo</p></div> <div class="febre"><p>Febre Amarela</p></div>
+                </div>
+                <div class="data">fev de 2023</div></div>
+            
+                <div class="detalhe">
+                <div class="info"><img src="../imagens/marcador.png"><p>Observações</p></div> 
+                <div class="centro-info">
+                  <div class="observacao">
+                    <p>Não espeficicado</p>
+                  </div></div>
+                <div class="data">fev de 2023</div></div>
           </div>
         </div>
 
@@ -87,7 +124,33 @@
       <img src="../imagens/icon cardapio.png">
       <p>Cardápio</p>
       <div class="texto-expandido">
-        <p>Aqui está o texto expandido para a Cardápio.</p>
+        <div class="cardapio">
+          <p><strong>Colocação</strong></p>
+          <div class="descricao">
+            <p>Mini pão francês com manteiga;<br>  Café com leite</p>
+          </div>
+        </div>
+        <div class="cardapio">
+          <p><strong>Lanche da manhã</strong></p>
+          <div class="descricao">
+          <p>Biscoito maionese;<br> Suco de maracujá</p>
+          </div>
+        </div>
+        <div class="cardapio">
+          <p><strong>Almoço</strong></p>
+          <div class="descricao">
+            <p>Arroz, Feijão preto, Carne moída, Macarrão a bolonhesa;<br><br>
+            Suco: Limonada;<br><br>
+            Sobremesa: Maçã
+            </p>
+          </div>
+        </div>
+        <div class="cardapio">
+          <p><strong>Lanche da Tarde</strong></p>
+          <div class="descricao">
+            <p>Duo de frutas (maçã e banana)</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -131,6 +194,7 @@ card.addEventListener('click', () => {
     card.classList.add('animate');
   }
 });
+
 
 
         // // document.getElementById('img-1').addEventListener('click', function() {
