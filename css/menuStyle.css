@@ -82,10 +82,7 @@ p{
 }
 
 .div-container a{
-  margin: 5px 0 0 25px;
-}
-
-.seta{
+  margin: 5px 0 0 45px;
 }
 
 .logo-sidebar{
@@ -176,12 +173,37 @@ justify-content: center;
 .iten-menu img {
   width: 35px;
   height: 35px;
-  margin-top: 30px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 30px 10px 0 40px;
 }
+
+.iten-menu{
+  width: 300px;
+  height: 20px;
+}
+
 .iten-menu #text{
   margin-bottom: 10px;
+}
+
+.esquerda {
+  position: absolute;
+  left: -35px;
+}
+
+#seta1{
+  transform: scaleX(-1);
+  width: 30px;
+  height: 30px;
+}
+#seta2{
+  transform: scaleX(-1);
+  width: 30px;
+  height: 30px;
+}
+#seta3{
+  transform: scaleX(-1);
+  width: 30px;
+  height: 30px;
 }
 
 /* When you mouse over the navigation links, change their color */
