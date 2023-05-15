@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/financa.css">
+    <script src="/js.js"></script>
     <title>Creche</title>
 </head>
 <body>
@@ -47,31 +48,83 @@
      <!--Financeiro: Pendentes, Pagas e Dados-->
 
      <div class="financa">
-
-      <a href="#pendente" id="pendentes">
+      <a href="#pendente" id="pendentes" class="opcao" onclick="toggleConteudo('conteudoPendente'); marcarSelecionado(this); return false;">
         <p>Pendentes</p>
-
       </a>
-
-      <a href="#pagas" id="pagas">
+    
+      <a href="#pagas" id="pagas" class="opcao" onclick="toggleConteudo('conteudoPagas'); marcarSelecionado(this); return false;">
         <p>Pagas</p>
-
       </a>
-
-      <a href="#dados" id="dados">
+    
+      <a href="#dados" id="dados" class="opcao" onclick="toggleConteudo('conteudoDados'); marcarSelecionado(this); return false;">
         <p>Dados</p>
       </a>
-
     </div>
 
-    <div id="conteudo">
+  <!-- Conteúdo invisível -->
+  <div id="conteudoPendente" class="conteudo">
+    <div class="titulo"> 
+      <p>Vencimento</p>
+          <p>Valor</p>
+          <p>Valor Pago</p>
+          <p>Status</p>
+        </div>
+        <div class="detalhe">
+          <p class="data">15/06/2023</p>
+          <p class="pago1">R$ 700,00</p>
+          <p class="pago2"></p>
+          <p id="pendente">Pendente</p>
+          <a href="#" class="imagem-clicavel" onclick="expandirDetalhe(this);">
+            <img src="../imagens/seta-azul.png"/>
+          </a>
+          <div class="conteudo-adicional">
+            <div class="anexo-container">
+              <p class="anexo-texto">Anexar Arquivo</p>
+              <img src="../imagens/anexo-cinza.png" alt="Anexo" class="anexo-imagem">
+            </div>
+          </div>
+  </div>
+
+  <div id="conteudoPagas" class="conteudo">
+      <div class="titulo">
+        <p>Vencimento</p>
+        <p>Valor</p>
+        <p>Valor Pago</p>
+        <p>Status</p>
+      </div>
+      <div class="detalhe">
+        <p class="data">15/06/2023</p>
+        <p class="pago1">R$ 700,00</p>
+        <p class="pago2">R$ 700,00</p>
+        <p class="pagoP">Pago</p>
+      </div>
+      <div class="detalhe">
+        <p class="data">15/05/2023</p>
+        <p class="pago1">R$ 700,00</p>
+        <p class="pago2">R$ 700,00</p>
+        <p class="pagoP">Pago</p>
+      </div>
+      <div class="detalhe">
+        <p class="data">15/04/2023</p>
+        <p class="pago1">R$ 700,00</p>
+        <p class="pago2">R$ 700,00</p>
+        <p class="pagoP">Pago</p>
+      </div>
+      <div class="detalhe">
+        <p class="data">15/03/2023</p>
+        <p class="pago1">R$ 700,00</p>
+        <p class="pago2">R$ 700,00</p>
+        <p class="pagoP">Pago</p>
+      </div>
+  </div>
+
+  <div id="conteudoDados" class="conteudo">
+      <p>Conteúdo dos Dados</p>
+  </div>
 
 
-
-
-
-    
-    </div>
+</body>
+</html>
 
 <script>
     /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
@@ -87,6 +140,56 @@
       document.getElementById("main").style.marginLeft = "0";
       document.body.style.backgroundColor = "white";
     }
+
+    function toggleConteudo(id) {
+  var conteudo = document.getElementById(id);
+  var links = document.getElementsByClassName('opcao');
+
+  for (var i = 0; i < links.length; i++) {
+    if (links[i].id === id) {
+      links[i].classList.add('selecionado');
+    } else {
+      links[i].classList.remove('selecionado');
+    }
+  }
+
+  var conteudos = document.getElementsByClassName('conteudo');
+
+  for (var i = 0; i < conteudos.length; i++) {
+    if (conteudos[i].id === id) {
+      conteudos[i].style.display = 'block';
+    } else {
+      conteudos[i].style.display = 'none';
+    }
+  }
+}
+
+function marcarSelecionado(link) {
+  var links = document.getElementsByClassName('opcao');
+
+  for (var i = 0; i < links.length; i++) {
+    links[i].classList.remove('selecionado');
+  }
+
+  link.classList.add('selecionado');
+}
+
+function expandirDetalhe(element) {
+  var detalhe = element.parentElement;
+  var conteudoAdicional = detalhe.querySelector('.conteudo-adicional');
+  var imagem = element.querySelector('img');
+
+  if (conteudoAdicional.style.display === 'none') {
+    conteudoAdicional.style.display = 'block';
+    detalhe.style.height = '180px';
+  } else {
+    conteudoAdicional.style.display = 'none';
+    detalhe.style.height = '50px';
+  }
+
+  imagem.style.transform = imagem.style.transform === 'rotate(-90deg)' ? 'rotate(90deg)' : 'rotate(-90deg)';
+}
+   
             // // document.getElementById('img-1').addEventListener('click', function() {
             // // document.getElementById('menu-lateral').style.left = '0'; 
             // });
