@@ -1,7 +1,7 @@
 *{
   margin: 0;
   padding: 0;
-}
+  }
 
 p{
   font-family: arial;
@@ -40,7 +40,6 @@ p{
   text-align: center;
 }
 
-
 .side{
   margin: 10px;
   display: flex;
@@ -51,6 +50,41 @@ p{
   max-height: 80px;
   cursor: pointer;
 }
+
+.sub-menu {
+  display: none;
+  padding-left: 20px; /* Adicione o espaçamento desejado nas opções do submenu */
+  transition: all 0.3s ease;
+}
+
+.sub-menu a {
+  display: block;
+  padding-left: 20px;
+}
+
+.sub-menu.show {
+  display: block;
+}
+.iten-menu {
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.iten-menu a {
+  text-decoration: none;
+}
+
+.div-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.div-container a{
+  margin: 5px 0 0 45px;
+}
+
 .logo-sidebar{
   max-width: 80px;
   max-height: 80px;
@@ -74,7 +108,7 @@ float: left;
 
 .footer-menu{
   position: absolute;
-  bottom: 90px;
+  bottom: 60px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -108,10 +142,6 @@ justify-content: center;
   margin-left:5px;
 }
 
-
-
-
-
 /* SIDEBAR */
 
 .sidenav {
@@ -134,25 +164,51 @@ justify-content: center;
 /* The navigation menu links */
 .sidenav a {
   font-size: 20px;
-  color: #818181;
+  color: #000000;
   display: block;
   transition: 0.3s;
   float: left;
 }
+
 .iten-menu img {
   width: 35px;
   height: 35px;
-  margin-top: 30px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 30px 10px 0 40px;
 }
+
+.iten-menu{
+  width: 300px;
+  height: 20px;
+}
+
 .iten-menu #text{
   margin-bottom: 10px;
 }
 
+.esquerda {
+  position: absolute;
+  left: -35px;
+}
+
+#seta1{
+  transform: scaleX(-1);
+  width: 30px;
+  height: 30px;
+}
+#seta2{
+  transform: scaleX(-1);
+  width: 30px;
+  height: 30px;
+}
+#seta3{
+  transform: scaleX(-1);
+  width: 30px;
+  height: 30px;
+}
+
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
-  color: #f1f1f1;
+  font-weight: bold;
 }
 
 /* Position and style the close button (top right corner) */
@@ -247,12 +303,20 @@ input[type="checkbox"] {
 }
 
 .conteudo {
-  display: none;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease;
+  margin: 15px 0 0 0;
+}
+
+.conteudo.expandido {
+  height: auto;
+  transition: height 0.3s ease;
 }
 
 .titulo{
   width: 70%;
-  margin: 25px auto 10px auto;
+  margin: 15px auto 10px auto;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -275,29 +339,6 @@ input[type="checkbox"] {
   transition: all ease-in-out 0.3s;
 }
 
-.conteudo-adicional {
-  background: #E5F3FF;
-  width: 300px;
-  height: 0;
-  overflow: hidden;
-  transition: height 0.3s ease;
-  position: absolute;
-  bottom: 20px;
-}
-
-.detalhe.expandido .conteudo-adicional {
-  height: 100px;
-}
-
-.anexo-container {
-  display: flex;
-  align-items: center;
-}
-
-.anexo-texto {
-  margin-right: 10px;
-}
-
 .detalhe p{
   margin: 15px 0 0 0;
 }
@@ -315,34 +356,32 @@ input[type="checkbox"] {
   margin: 0 0 0 10px;
 }
 
-#pendente {
+.pendente {
   color: #F8AE00;
   padding: 0 0 0 60px;
   margin: 15px -10px 0 0;
+  font-weight: 200;
+}
+
+.anexo-container {
+  display: flex;
+  align-items: center;
+}
+
+.anexo-texto {
+  margin-right: 10px;
 }
 
 .imagem-clicavel {
-right: 230px;
-position: fixed;
-margin: 10px 0 0 0;
-}
-
-.imagem-clicavel img {
-  width: 30px;
-  height: 30px;
-  transform: rotate(-90deg);
-  cursor: pointer;
-  transition: all ease-in-out 0.3s;
-}
-
-.conteudo-adicional {
-  border-radius: 8px;
-  background: #F5F5F5;
-  width: 100%;
-  height: 70px;
-  display: none;
-}
-
-.conteudo-adicional.expandido {
-  display: block;
-}
+  right: 230px;
+  position: fixed;
+  margin: 10px 0 0 0;
+  }
+  
+  .imagem-clicavel img {
+    width: 30px;
+    height: 30px;
+    transform: rotate(-90deg);
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+  }

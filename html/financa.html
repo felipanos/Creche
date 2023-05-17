@@ -9,11 +9,11 @@
     <title>Creche</title>
 </head>
 <body>
-  <!-- Menu acima-->
+   <!-- Menu acima-->
 <div class="main">
   <navbar class="navbar">
     <div class="esquerda-nav">
-      <div onclick="openNav()"><img src="../imagens/icon menu.png" class="menu-azul"></div>
+    <div onclick="openNav()"><img src="../imagens/icon menu.png" class="menu-azul"></div>
       <div><img src="../imagens/creche.png" class="logo-navbar"></div>
     </div>
     <div class="direita-nav">
@@ -23,105 +23,144 @@
   </navbar>
   
     <!--Menu lateral-->
-  <div id="mySidenav" class="sidenav">
-    <div class="side">
-      <a href="javascript:void(0)" onclick="closeNav()"><img src="../imagens/icon menu.png" class="menu-cinza"></a>
-      <div><img src="../imagens/creche.png" class="logo-sidebar"></div>
-    </div>
-    <div class="iten-menu">
-      <a href="#"><img src="../imagens/icon calendario cinza.png"><p>Calendario</p></a>
-      <a href="financa.html"><img src="../imagens/icon financeiro cinza.png"><p>Financeiro</p></a>
-      <a href="menuPrincipal.html"><img src="../imagens/icon home azul.png"><p>Home</p></a>
-      <a href="#"><img src="../imagens/icon saude cinza.png"><p>Saude</p></a>
-      <a href="#"><img src="../imagens/icon user cinza.png"><p>Perfil</p></a>
-    </div>
-      <!--Footer do menu lateral-->
-    <div class="footer-menu">
-      <a href="index.html"><img src="../imagens/sair.png" class="sair"><p>Sair</p></a>
-    </div>
+    <div id="mySidenav" class="sidenav">
+      <div class="side">
+        <a href="javascript:void(0)" onclick="closeNav()"><img src="../imagens/icon menu.png" class="menu-cinza"></a>
+        <div><img src="../imagens/creche.png" class="logo-sidebar"></div>
+      </div>
+      <div class="iten-menu">
+        <a href="#"><img src="../imagens/icon calendario cinza.png">
+          <p>Calendario</p></a>
   
-    <div class="copyriht"> 
-      <img src="../imagens/icon copyright preto.png" class="copyright"><p><strong>2023 FROM NEWPATH</strong></p>
+        <a href="#" onclick="toggleSubMenu('subMenuFinanca')">
+          <img src="../imagens/icon financeiro cinza.png">
+          <div class="esquerda"><img src="../imagens/icon seta cinza.png" id="seta1"></div>
+          <p>Financeiro</p>
+          <div id="subMenuFinanca" class="sub-menu">
+            <div class="div-container">
+              <a href="financa.html#pendetes">Pendentes</a>
+              <a href="financa.html#pagas">Pagas</a>
+              <a href="financa.html#dados">Dados</a>
+            </div>
+          </div>
+        </a>
+        <a href="menuPrincipal.html"><img src="../imagens/icon home azul.png"><p>Home</p></a>
+  
+        <a href="#" onclick="toggleSubMenu('subMenuMedico')">
+          <img src="../imagens/icon saude cinza.png">
+          <div class="esquerda"><img src="../imagens/icon seta cinza.png" id="seta2"></div>
+          <p>Saude</p>
+          <div id="subMenuMedico" class="sub-menu">
+            <div class="div-container">
+              <a href="medico.html#ficha-medica">Ficha Médica</a>
+              <a href="#">Atestados</a>
+              <a href="#">Cardápio</a>
+            </div>
+          </div>
+        </a>
+  
+        <a href="#" onclick="toggleSubMenu('subMenuPerfil')">
+          <img src="../imagens/icon user cinza.png">
+          <div class="esquerda"><img src="../imagens/icon seta cinza.png" id="seta3"></div>
+          <p>Perfil</p>
+          <div id="subMenuPerfil" class="sub-menu">
+            <div class="div-container">
+              <a href="#">Meus Dados</a>
+              <a href="#">Configurações</a>
+              <a href="#">Ajuda</a>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!-- Footer do menu lateral -->
+      <div class="footer-menu">
+        <a href="index.html"><img src="../imagens/sair.png" class="sair"><p>Sair</p></a>
+      </div>
+    
+      <div class="copyriht"> 
+        <img src="../imagens/icon copyright preto.png" class="copyright">
+        <p><strong>2023 FROM NEWPATH</strong></p>
+      </div>
     </div>
-  </div>
   
      <!--Financeiro: Pendentes, Pagas e Dados-->
 
      <div class="financa">
-      <a href="#pendente" id="pendentes" class="opcao" onclick="toggleConteudo('conteudoPendente'); marcarSelecionado(this); return false;">
+      <a href="#pendente" id="pendentes" class="opcao" onclick="toggleConteudo('conteudoPendente', this);">
         <p>Pendentes</p>
       </a>
     
-      <a href="#pagas" id="pagas" class="opcao" onclick="toggleConteudo('conteudoPagas'); marcarSelecionado(this); return false;">
+      <a href="#pagas" id="pagas" class="opcao" onclick="toggleConteudo('conteudoPagas', this);">
         <p>Pagas</p>
       </a>
     
-      <a href="#dados" id="dados" class="opcao" onclick="toggleConteudo('conteudoDados'); marcarSelecionado(this); return false;">
+      <a href="#dados" id="dados" class="opcao" onclick="toggleConteudo('conteudoDados', this);">
         <p>Dados</p>
       </a>
     </div>
 
-  <!-- Conteúdo invisível -->
-  <div id="conteudoPendente" class="conteudo">
-    <div class="titulo"> 
-      <p>Vencimento</p>
-          <p>Valor</p>
-          <p>Valor Pago</p>
-          <p>Status</p>
-        </div>
-        <div class="detalhe">
-          <p class="data">15/06/2023</p>
-          <p class="pago1">R$ 700,00</p>
-          <p class="pago2"></p>
-          <p id="pendente">Pendente</p>
-          <a href="#" class="imagem-clicavel" onclick="expandirDetalhe(this);">
-            <img src="../imagens/seta-azul.png"/>
-          </a>
-          <div class="conteudo-adicional">
-            <div class="anexo-container">
-              <p class="anexo-texto">Anexar Arquivo</p>
-              <img src="../imagens/anexo-cinza.png" alt="Anexo" class="anexo-imagem">
-            </div>
-          </div>
-  </div>
+     <!-- Conteúdo invisível -->
 
-  <div id="conteudoPagas" class="conteudo">
+     <div id="conteudoPendente" class="conteudo">
       <div class="titulo">
         <p>Vencimento</p>
-        <p>Valor</p>
+        <p>Valor
         <p>Valor Pago</p>
-        <p>Status</p>
+        <p>Status</p>  
+        </p>
       </div>
       <div class="detalhe">
         <p class="data">15/06/2023</p>
         <p class="pago1">R$ 700,00</p>
-        <p class="pago2">R$ 700,00</p>
-        <p class="pagoP">Pago</p>
+        <p class="pago2"></p>
+        <p class="pendente">Pendente</p>
+        <a href="#" class="imagem-clicavel" onclick="expandirDetalhe(this);">
+          <img src="../imagens/seta-azul.png"/>
+        </a>
+        
       </div>
-      <div class="detalhe">
-        <p class="data">15/05/2023</p>
-        <p class="pago1">R$ 700,00</p>
-        <p class="pago2">R$ 700,00</p>
-        <p class="pagoP">Pago</p>
-      </div>
-      <div class="detalhe">
-        <p class="data">15/04/2023</p>
-        <p class="pago1">R$ 700,00</p>
-        <p class="pago2">R$ 700,00</p>
-        <p class="pagoP">Pago</p>
-      </div>
-      <div class="detalhe">
-        <p class="data">15/03/2023</p>
-        <p class="pago1">R$ 700,00</p>
-        <p class="pago2">R$ 700,00</p>
-        <p class="pagoP">Pago</p>
-      </div>
-  </div>
+    </div>
+    
+    <div id="conteudoPagas" class="conteudo">
+    <div class="titulo">
+      <p>Vencimento</p>
+      <p>Valor
+      <p>Valor Pago</p>
+      <p>Status</p>  
+      </p>
+    </div>
 
-  <div id="conteudoDados" class="conteudo">
+    <div class="detalhe">
+      <p class="data">15/06/2023</p>
+      <p class="pago1">R$ 700,00</p>
+      <p class="pago2">R$ 700,00</p>
+      <p class="pagoP">Pago</p>
+    </div>
+    <div class="detalhe">
+      <p class="data">15/05/2023</p>
+      <p class="pago1">R$ 700,00</p>
+      <p class="pago2">R$ 700,00</p>
+      <p class="pagoP">Pago</p>
+    </div>
+    <div class="detalhe">
+      <p class="data">15/04/2023</p>
+      <p class="pago1">R$ 700,00</p>
+      <p class="pago2">R$ 700,00</p>
+      <p class="pagoP">Pago</p>
+    </div>
+    <div class="detalhe">
+      <p class="data">15/03/2023</p>
+      <p class="pago1">R$ 700,00</p>
+      <p class="pago2">R$ 700,00</p>
+      <p class="pagoP">Pago</p>
+    </div>
+
+    </div>
+
+    <div id="conteudoDados" class="conteudo">
       <p>Conteúdo dos Dados</p>
-  </div>
-
+    </div>
+    
 
 </body>
 </html>
@@ -129,42 +168,39 @@
 <script>
     /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
     function openNav() {
-      document.getElementById("mySidenav").style.width = "250px";
-      document.getElementById("main").style.marginLeft = "250px";
-      document.body.style.backgroundColor = "rgba(0,0,0,0.0)";
-    }
-    
-    /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
-    function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
-      document.getElementById("main").style.marginLeft = "0";
-      document.body.style.backgroundColor = "white";
-    }
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.0)";
+}
 
-    function toggleConteudo(id) {
-  var conteudo = document.getElementById(id);
-  var links = document.getElementsByClassName('opcao');
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
+  document.body.style.backgroundColor = "white";
+}
 
-  for (var i = 0; i < links.length; i++) {
-    if (links[i].id === id) {
-      links[i].classList.add('selecionado');
-    } else {
-      links[i].classList.remove('selecionado');
-    }
+function toggleSubMenu(subMenuId) {
+  var subMenu = document.getElementById(subMenuId);
+  var isOpen = subMenu.classList.contains('open');
+
+  // Fecha todos os submenus
+  var subMenus = document.getElementsByClassName("sub-menu");
+  for (var i = 0; i < subMenus.length; i++) {
+    subMenus[i].classList.remove('open');
+    subMenus[i].style.display = "none";
   }
 
-  var conteudos = document.getElementsByClassName('conteudo');
-
-  for (var i = 0; i < conteudos.length; i++) {
-    if (conteudos[i].id === id) {
-      conteudos[i].style.display = 'block';
-    } else {
-      conteudos[i].style.display = 'none';
-    }
+  // Abre ou fecha o submenu atual
+  if (!isOpen) {
+    subMenu.classList.add('open');
+    subMenu.style.display = "block";
   }
 }
 
-function marcarSelecionado(link) {
+//Abre o conteúdo de pagamento
+function toggleConteudo(id, link) {
+  var conteudo = document.getElementById(id);
   var links = document.getElementsByClassName('opcao');
 
   for (var i = 0; i < links.length; i++) {
@@ -172,23 +208,19 @@ function marcarSelecionado(link) {
   }
 
   link.classList.add('selecionado');
-}
 
-function expandirDetalhe(element) {
-  var detalhe = element.parentElement;
-  var conteudoAdicional = detalhe.querySelector('.conteudo-adicional');
-  var imagem = element.querySelector('img');
+  var conteudos = document.getElementsByClassName('conteudo');
 
-  if (conteudoAdicional.style.display === 'none') {
-    conteudoAdicional.style.display = 'block';
-    detalhe.style.height = '180px';
-  } else {
-    conteudoAdicional.style.display = 'none';
-    detalhe.style.height = '50px';
+  for (var i = 0; i < conteudos.length; i++) {
+    if (conteudos[i].id === id) {
+      conteudos[i].classList.toggle('expandido');
+    } else {
+      conteudos[i].classList.remove('expandido');
+    }
   }
-
-  imagem.style.transform = imagem.style.transform === 'rotate(-90deg)' ? 'rotate(90deg)' : 'rotate(-90deg)';
 }
+
+   
    
             // // document.getElementById('img-1').addEventListener('click', function() {
             // // document.getElementById('menu-lateral').style.left = '0'; 
