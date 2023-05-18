@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/financa.css">
-    <script src="/js.js"></script>
     <title>Creche</title>
 </head>
 <body>
@@ -100,7 +99,7 @@
     </div>
 
      <!-- Conteúdo invisível -->
-
+      <!-- Pendentes -->
      <div id="conteudoPendente" class="conteudo">
       <div class="titulo">
         <p>Vencimento</p>
@@ -115,12 +114,23 @@
         <p class="pago2"></p>
         <p class="pendente">Pendente</p>
         <a href="#" class="imagem-clicavel" onclick="expandirDetalhe(this);">
-          <img src="../imagens/seta-azul.png"/>
+          <img id="seta-img" src="../imagens/seta-azul.png" />
         </a>
-        
+        <div id="conteudo-oculto" class="oculto">
+          <!-- Conteúdo oculto -->
+         <form action="">
+          <div>
+            <label for="arquivo">Anexar arquivo <img src="../imagens/anexo-cinza.png"></label>
+            <input type="file" name="arquivo" id="arquivo">
+          </div>
+         </form>
+        </div>
       </div>
+
     </div>
     
+     <!-- Pagas -->
+
     <div id="conteudoPagas" class="conteudo">
     <div class="titulo">
       <p>Vencimento</p>
@@ -157,8 +167,29 @@
 
     </div>
 
+    <!-- Dados -->
+
     <div id="conteudoDados" class="conteudo">
-      <p>Conteúdo dos Dados</p>
+      <div class="dados">
+        <div class="chave">
+          <div class="imagem-pix">
+          <img src="../imagens/pix.png">
+        </div>
+        <div class="chave-aleatoria">
+          <p>Chave Aleatória:</p>
+          <p>1234567891011121314151617181920</p>
+        </div>
+        </div>
+        <div class="agencia">
+          <div class="imagem-agencia">
+            <img src="../imagens/transferencia.png">
+            <div class="conta">
+              <p>Agência: </p>
+              <p>Conta:</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     
 
@@ -220,10 +251,14 @@ function toggleConteudo(id, link) {
   }
 }
 
-   
+function expandirDetalhe() {
+  var detalhe = document.querySelector('.detalhe');
+  detalhe.classList.toggle('expandido');
+}
+
+
    
             // // document.getElementById('img-1').addEventListener('click', function() {
             // // document.getElementById('menu-lateral').style.left = '0'; 
             // });
           </script>
-          </body>
