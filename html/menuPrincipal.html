@@ -64,7 +64,7 @@
         <p>Perfil</p>
         <div id="subMenuPerfil" class="sub-menu">
           <div class="div-container">
-            <a href="#">Meus Dados</a>
+            <a href="perfil.html">Meus Dados</a>
             <a href="#">Configurações</a>
             <a href="#">Ajuda</a>
           </div>
@@ -95,7 +95,8 @@
           <p>Hoje é dia de algo muito importante para todos nós!
             O objetivo do Dia Mundial da Água é promover conscientização sobre a relevância da água para a nossa sobrevivência e de outros seres vivos.</p>
         <div class="curtir">
-          <img src="../imagens/coracao.png" class="coracao"> <p>Curtir</p>
+          <img src="../imagens/coracao.png" class="coracao" onclick="trocarImagem(this)">
+          <p onclick="trocarImagem(this)">Curtir</p>
         </div>
         </div>
       </div>
@@ -110,9 +111,10 @@
       </div>
         <div class="descricao">
           <p>Nós da Jardim dos Sonhos viemos parabenizar todas as mulheres de dentro e fora da nossa instituição. Mas, principalmente a nossa grande equipe, composta quase que totalmente por excepcionais mulheres!</p>
-        <div class="curtir">
-          <img src="../imagens/coracao.png" class="coracao"> <p>Curtir</p>
-        </div>
+          <div class="curtir">
+            <img src="../imagens/coracao.png" class="coracao" onclick="trocarImagem(this)">
+            <p onclick="trocarImagem(this)">Curtir</p>
+          </div>
         </div>
       </div>
 
@@ -124,14 +126,19 @@
         <img src="../imagens/luis.jpeg">
       </div>
         <div class="descricao">
+          <center>
           <p>🧩 2 de abril dia mundial do autismo 🧩<br>
             Um dia especial para pessoas incríveis 💙</p>
+          </center>
+          </div> 
+
         <div class="curtir">
-          <img src="../imagens/coracao.png" class="coracao"> <p>Curtir</p>
+          <img src="../imagens/coracao.png" class="coracao" onclick="trocarImagem(this)">
+          <p onclick="trocarImagem(this)">Curtir</p>
         </div>
         </div>
       </div>
-</div> 
+
 
 <!--Footer-->
 <div class="footer"></div>
@@ -170,6 +177,42 @@ function toggleSubMenu(subMenuId) {
     subMenu.style.display = "block";
   }
 }
+
+function trocarImagem(elemento) {
+  if (elemento.src.endsWith('coracao.png')) {
+    elemento.src = '../imagens/coracao_2.png';
+    elemento.nextElementSibling.textContent = 'Descurtir';
+  } else {
+    elemento.src = '../imagens/coracao.png';
+    elemento.nextElementSibling.textContent = 'Curtir';
+  }
+}
+
+function trocarImagem(elemento) {
+  if (elemento.src.endsWith('coracao.png')) {
+    elemento.src = '../imagens/coracao_2.png';
+    elemento.classList.add('scale');
+    elemento.nextElementSibling.textContent = 'Descurtir';
+
+    // Remover classe 'scale' após 300ms (tempo da transição)
+    setTimeout(function() {
+      elemento.classList.remove('scale');
+    }, 300);
+  } else {
+    elemento.src = '../imagens/coracao.png';
+    elemento.classList.add('scale');
+    elemento.nextElementSibling.textContent = 'Curtir';
+
+    // Remover classe 'scale' após 300ms (tempo da transição)
+    setTimeout(function() {
+      elemento.classList.remove('scale');
+    }, 300);
+  }
+}
+
+
+
+
 
         // // document.getElementById('img-1').addEventListener('click', function() {
         // // document.getElementById('menu-lateral').style.left = '0'; 

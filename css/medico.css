@@ -278,8 +278,15 @@ input[type="checkbox"] {
   flex-direction: row;
   align-items: center;
   cursor: pointer;
-  transition: all 0.5s ease-in-out
+  transition: all 0.5s ease-in-out;
 }
+
+@media screen and (width:100px){
+  .cards, .invisible{flex-direction: column;
+  width: 100px;}
+}
+
+
 
 .cards:hover{
   background: #ffd061;
