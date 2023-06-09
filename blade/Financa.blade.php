@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/financa.css">
+    <link rel="stylesheet" href="{{ asset('css/financa.css') }}">
+    <script src="{{ asset('js.js') }}"></script>
     <title>Creche</title>
 </head>
 <body>
@@ -12,46 +13,46 @@
 <div class="main">
   <navbar class="navbar">
     <div class="esquerda-nav">
-    <div onclick="openNav()"><img src="../imagens/icon menu.png" class="menu-azul"></div>
-      <div><img src="../imagens/creche.png" class="logo-navbar"></div>
+    <div onclick="openNav()"><img src="{{ asset('imagens/icon menu.png') }}" class="menu-azul"></div>
+      <div><img src="{{ asset('imagens/creche.png') }}" class="logo-navbar"></div>
     </div>
     <div class="direita-nav">
       <div class="texto-user"><h5><strong>Aluno(a)</strong></h5></div>
-      <div><img src="../imagens/icon aluna.png" class="logo-user"></div>
+      <div><img src="{{ asset('imagens/icon aluna.png') }}" class="logo-user"></div>
     </div>
   </navbar>
   
     <!--Menu lateral-->
     <div id="mySidenav" class="sidenav">
       <div class="side">
-        <a href="javascript:void(0)" onclick="closeNav()"><img src="../imagens/icon menu.png" class="menu-cinza"></a>
-        <div><img src="../imagens/creche.png" class="logo-sidebar"></div>
+        <a href="javascript:void(0)" onclick="closeNav()"><img src="{{ asset('imagens/icon menu.png') }}" class="menu-cinza"></a>
+        <div><img src="{{ asset('imagens/creche.png') }}" class="logo-sidebar"></div>
       </div>
       <div class="iten-menu">
-        <a href="#"><img src="../imagens/icon calendario cinza.png">
+        <a href="#"><img src="{{ asset('imagens/icon calendario cinza.png') }}">
           <p>Calendario</p></a>
   
         <a href="#" onclick="toggleSubMenu('subMenuFinanca')">
-          <img src="../imagens/icon financeiro cinza.png">
-          <div class="esquerda"><img src="../imagens/icon seta cinza.png" id="seta1"></div>
+          <img src="{{ asset('imagens/icon financeiro cinza.png') }}">
+          <div class="esquerda"><img src="{{ asset('imagens/icon seta cinza.png') }}" id="seta1"></div>
           <p>Financeiro</p>
           <div id="subMenuFinanca" class="sub-menu">
             <div class="div-container">
-              <a href="financa.html#pendetes">Pendentes</a>
-              <a href="financa.html#pagas">Pagas</a>
-              <a href="financa.html#dados">Dados</a>
+              <a href="{{ route('pendentes') }}">Pendentes</a>
+              <a href="{{ route('pagas') }}">Pagas</a>
+              <a href="{{ route('dados') }}">Dados</a>
             </div>
           </div>
         </a>
-        <a href="menuPrincipal.html"><img src="../imagens/icon home azul.png"><p>Home</p></a>
+        <a href="{{ route('menuPrincipal') }}"><img src="{{ asset('imagens/icon home azul.png') }}"><p>Home</p></a>
   
         <a href="#" onclick="toggleSubMenu('subMenuMedico')">
-          <img src="../imagens/icon saude cinza.png">
-          <div class="esquerda"><img src="../imagens/icon seta cinza.png" id="seta2"></div>
+          <img src="{{ asset('imagens/icon saude cinza.png') }}">
+          <div class="esquerda"><img src="{{ asset('imagens/icon seta cinza.png') }}" id="seta2"></div>
           <p>Saude</p>
           <div id="subMenuMedico" class="sub-menu">
             <div class="div-container">
-              <a href="medico.html#ficha-medica">Ficha Médica</a>
+              <a href="{{ route('fichaMedica') }}">Ficha Médica</a>
               <a href="#">Atestados</a>
               <a href="#">Cardápio</a>
             </div>
@@ -59,8 +60,8 @@
         </a>
   
         <a href="#" onclick="toggleSubMenu('subMenuPerfil')">
-          <img src="../imagens/icon user cinza.png">
-          <div class="esquerda"><img src="../imagens/icon seta cinza.png" id="seta3"></div>
+          <img src="{{ asset('imagens/icon user cinza.png') }}">
+          <div class="esquerda"><img src="{{ asset('imagens/icon seta cinza.png') }}" id="seta3"></div>
           <p>Perfil</p>
           <div id="subMenuPerfil" class="sub-menu">
             <div class="div-container">
@@ -73,11 +74,11 @@
       </div>
       <!-- Footer do menu lateral -->
       <div class="footer-menu">
-        <a href="index.html"><img src="../imagens/sair.png" class="sair"><p>Sair</p></a>
+        <a href="{{ route('index') }}"><img src="{{ asset('imagens/sair.png') }}" class="sair"><p>Sair</p></a>
       </div>
     
       <div class="copyriht"> 
-        <img src="../imagens/icon copyright preto.png" class="copyright">
+        <img src="{{ asset('imagens/icon copyright preto.png') }}" class="copyright">
         <p><strong>2023 FROM NEWPATH</strong></p>
       </div>
     </div>
@@ -99,7 +100,7 @@
     </div>
 
      <!-- Conteúdo invisível -->
-      <!-- Pendentes -->
+
      <div id="conteudoPendente" class="conteudo">
       <div class="titulo">
         <p>Vencimento</p>
@@ -114,24 +115,11 @@
         <p class="pago2"></p>
         <p class="pendente">Pendente</p>
         <a href="#" class="imagem-clicavel" onclick="expandirDetalhe(this);">
-          <img id="seta-img" src="../imagens/seta-azul.png" />
+          <img src="{{ asset('imagens/seta-azul.png') }}"/>
         </a>
-        <div id="conteudo-oculto" class="oculto">
-          <!-- Conteúdo oculto -->
-         <form action="">
-          <div>
-            <label for="arquivo">Anexar arquivo <img src="../imagens/anexo-cinza.png"></label>
-            <input type="file" name="arquivo" id="arquivo">
-          </div>
-         </form>
-        </div>
       </div>
-
     </div>
     
-     <!-- Pagas -->
-
-     <div class="fantasma">
     <div id="conteudoPagas" class="conteudo">
     <div class="titulo">
       <p>Vencimento</p>
@@ -168,41 +156,12 @@
 
     </div>
 
-    <!-- Dados -->
-
     <div id="conteudoDados" class="conteudo">
-      <div class="dados">
-        <div class="chave">
-          <div class="imagem-pix">
-          <img src="../imagens/pix.png">
-        </div>
-        <div class="chave-aleatoria">
-          <p class="key"><strong>Chave Aleatória:</strong></p>
-          <p>1234567891011121314151617181920</p>
-        </div>
-        </div>
-        <div class="agencia">
-          <div class="imagem-agencia">
-            <img src="../imagens/transferencia.png">
-          </div>
+      <p>Conteúdo dos Dados</p>
+    </div>
 
-            <div class="conta">
-              <div class="agency">
-              <p><strong>Agência:</strong></p> <p>1234</p>
-            </div>
-
-            <div class="acount">
-              <p><strong>Conta:</strong></p> <p>12345-6</p>
-            </div>
-            </div>
-          </div>
-        </div>
-      
-   
-
+</div>
 </body>
-</html>
-
 <script>
     /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
     function openNav() {
@@ -258,16 +217,10 @@ function toggleConteudo(id, link) {
   }
 }
 
-function expandirDetalhe() {
-  var detalhe = document.querySelector('.detalhe');
-  detalhe.classList.toggle('expandido');
-}
-
-
-
-
+   
    
             // // document.getElementById('img-1').addEventListener('click', function() {
             // // document.getElementById('menu-lateral').style.left = '0'; 
             // });
           </script>
+</html>
