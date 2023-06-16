@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+html{
+  overflow-x:hidden;
+  }
+  
+  *{
+      margin: 0;
+      padding: 0;
+      }
+    
+    p{
+      font-family: arial;
+    }
+    
+    .navbar{
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .esquerda-nav{
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .menu-azul{
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 5px;
+      bottom: 0;
+      cursor: pointer;
+    }
+
+    .logo-navbar{
+  position: absolute;
+  top: 10px;
+  left: 70px;
+  right: 5px;
+  bottom: 0;
+  max-width: 80px;
+  max-height: 80px;
+    }
+    
+    
+    .direita-nav{
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .logo-user{
+      position: absolute;
+      top: 5px;
+      left: auto;
+      right: 0;
+      bottom: 0;
+      margin: 5px 5px 5px 5px;
+    }
+
+    .texto-user{
+  position: absolute;
+  top: 30px;
+  left: auto;
+  right: 60px;
+  bottom: 0;
+  text-align: center;
+    }
+    
+    .side{
+      margin: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .menu-cinza{
+      position: absolute;
+    top: 10px;
+    left: 19px;
+    right: 5px;
+    bottom: 0;
+    cursor: pointer;
+    }
+    
+    .sub-menu {
+      display: none;
+      padding-left: 20px; /* Adicione o espaçamento desejado nas opções do submenu */
+      transition: all 0.3s ease-in-out;
+    }
+    
+    .sub-menu a {
+      display: block;
+      padding-left: 20px;
+      transition: all 0.3s ease-in-out;
+    }
+    
+    .sub-menu.show {
+      display: block;
+      transition: all 0.3s ease-in-out;
+    }
+    .iten-menu {
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .iten-menu a {
+      text-decoration: none;
+    }
+    
+    .div-container{
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .div-container a{
+      margin: 5px 0 0 45px;
+    }
+    
+    .logo-sidebar{
+      margin: 0 20px 0 0;
+      max-width: 80px;
+      max-height: 80px;
+    }
+     
+    .iten-menu p{
+      padding-right: 80px;
+      margin-top: 35px;
+      margin-left: 10px;
+      float: left;
+    }
+    
+    .iten-menu img{
+    float: left;
+    width: 25px;
+    height: 25px;
+  }
+    
+    .sair{
+      width: 30px;
+      height: 30px;
+    }
+    
+    .footer-menu{
+      position: absolute;
+      bottom: 90px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      margin-left:40px;
+      font-size:15px
+    }
+    
+    .footer-menu p{
+    float: left;
+    margin-left: 10px;
+    margin-top: 5px;
+    align-items: center;
+    justify-content: center;
+    }
+    
+    .footer-menu img{
+      float: left;
+    }
+    
+    .copyriht {
+      top: 90%; 
+      left: 20%;
+      bottom: 0;
+      display:flex;
+      align-items:center;
+      flex-direction: row;
+      position: absolute;
+    }
+    
+    .copyriht p {
+      margin-left:5px;
+      font-size: 10px ;
+    }
+    
+  
+    
+    /* SIDEBAR */
+    
+    .sidenav {
+      height: 100%; /* 100% Full-height */
+      width: 0; /* 0 width - change this with JavaScript */
+      position: fixed; /* Stay in place */
+      z-index: 4; /* Stay on top */
+      top: 0;
+      left: -9px;
+      background-color: #ffffff;
+      border-right: 1px solid #009CDE;
+      border-radius: 12px;
+      overflow-x: hidden; /* Disable horizontal scroll */
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+    
+    /* The navigation menu links */
+    .sidenav a {
+      font-size: 20px;
+      color: #000000;
+      display: block;
+      transition: 0.3s;
+      float: left;
+    }
+    
+    .iten-menu img {
+      width: 35px;
+      height: 35px;
+      margin: 30px 10px 0 40px;
+    }
+    
+    .iten-menu{
+      width: 300px;
+      height: 20px;
+    }
+    
+    .iten-menu #text{
+      margin-bottom: 10px;
+    }
+    
+    .esquerda {
+      position: absolute;
+      left: -25px;
+    }
+    
+    
+    /* When you mouse over the navigation links, change their color */
+    .sidenav a:hover {
+      font-weight: bold;
+      color: #004085;
+    }
+    
+    /* Position and style the close button (top right corner) */
+    .sidenav .closebtn {
+      position: absolute;
+      text-decoration: none;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+    
+    /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+    #main {
+      transition: margin-left 0.1s;
+      margin: 10px 10px 10px 10px;
+    }
+    
+    /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+    @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 15px;}
+      .sidenav a {font-size: 18px;}
+    }
+  
+    #img-1 {
+      padding-left: 20px;
+      max-width: 100px;
+      max-height: 200px;
+    
+    }
+    
+    #img-1:checked + #menu-lateral {
+      left: 0;
+    }
+    
+    input[type="checkbox"] {
+      display: none;
+    }
+    
+    #img-3:last-child {
+      margin-right: 0; /* Remova a margem direita da terceira imagem */
+      margin-left: auto; /* Alinhe a terceira imagem à extrema direita */
+      width: 48px;
+      height: 48px;
+      top: 40px;
+        
+    }
+    
+    .texto{
+      text-align: center;
+      margin-right: 0; /* Remova a margem direita da terceira imagem */
+      margin-left: auto; /* Alinhe a terceira imagem à extrema direita */
+      margin-top: 15px;
+      padding-right:15px;
+    }
+    
+      h5 {
+      font-family: arial;
+      margin: 0;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  
+     /* SIDEBAR */
+    
+
+/*CARDS*/
+
+.invisible{
+  margin: auto;
+  width: 1400px;
+  justify-content: space-between;
+  display:flex;
+}
+
+.cards{ 
+  margin: 100px 0 0 0;
+  width:350px;
+  height:130px;
+  border-radius: 10px;
+  background: #F8AE00;
+  position: relative;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out
+}
+
+.cards:hover{
+  background: #ffd061;
+}
+
+.cards.animate {
+  animation: color-change 2s ease-in-out infinite;
+}
+
+.cards.card-normal {
+  background: #f5f5f5;
+  height: 700px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.cards.card-normal > div {
+  position: absolute;
+  top: 0;
+  margin-top: 110px; /* ou padding-top: 20px; */
+}
+
+
+.cards .content{
+  transition: all 0.5s;
+}
+
+.cards.cor-mudada {
+  background: #f5f5f5;
+}
+
+.cards img{
+  margin: 5px 0 0 0;
+}
+
+.cards p {
+  margin: 10px;
+}
+
+.cards .texto-expandido {
+  display: none;
+}
+
+.cards.card-normal h1{
+ font-size: 25px;
+ margin: 0 0 0 20px;
+}
+
+.texto-expandido {
+  display: none;
+  transition: 1.9s ease-in-out;  
+  opacity: 0;
+  flex-direction: column;
+  overflow: hidden;
+  margin: auto;
+  top: 0;
+}
+
+.texto-expandido.mostrar {
+  display: block;
+  opacity: 1;
+  margin: 10 0 0 0;
+}
+
+.detalhe{
+  margin: 10px 0 4px 0;
+  width: 300px;
+  height: 60px;
+  border-radius: 8px;
+  background-color: #F6E5CA;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding-bottom: 20px;
+  transition: all 0.6s ease-in-out;
+}
+
+.altura-peso {
+  margin-left: 10px;
+}
+
+.info {
+  white-space: nowrap
+}
+
+.detalhe.mostrar{
+  transition: all 0.6s ease-in-out;
+}
+  
+.detalhe .info img{
+  width: 20px;
+  height: 20px;
+  margin: 5px 0 0 15px;
+}
+
+.centro-info {
+  display: flex;
+  align-items: center;
+  margin: 20px 0 0 25px;
+}
+
+.centro-info p{
+margin: 0px;
+}
+
+.numero {
+  font-size: 22px;
+  font-family:arial;
+}
+
+.cm, .kg {
+  color: #555555;
+  text-align: right;
+  padding-right: 30px;
+  font-size: 14px;
+  font-family: arial;
+}
+
+.data {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+}
+
+
+.detalhe .info {
+  width: 230px;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+}
+
+
+.detalhe .data {
+  color: #939090;
+  font-size: 12px;
+  font-family: 'Inter';
+  font-style: normal;
+  margin:3px;
+}
+
+.alergias{
+  margin: 0 0 10px 5px;
+  font-size: 14px;
+}
+
+.medicamentos{
+  margin: 0 0 10px 5px;
+  font-size: 14px;
+}
+
+.o{
+  font-size: 22px;
+  margin: 0 0 0 0;
+}
+
+.vacinas{
+  display:flex;
+  font-size: 10px;
+  margin: 0 0 0 10px;
+}
+
+.sarampo{
+  background: #A7DAF4;
+  border-radius: 12px;
+  margin: 0 5px 0 0
+}
+
+.febre{
+  background: #A7DAF4;
+  border-radius: 12px;
+}
+
+.observacao{
+  font-size: 14px;
+}
+
+/*Card 2*/
+
+.atestado{
+  margin: 10px;
+  width: 300px;
+  height: 100px;
+  border-radius: 12px;
+  background-color: #F6E5CA;
+  transition: all 0.6s ease-in-out;
+  padding-top: 3px;
+  font-size: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.atestado img{
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+}
+.box{
+  margin: 5px;
+  z-index: 2;
+  align-items: center;
+  justify-content: center;
+}
+
+.atestado p{
+font-weight: 100;
+}
+
+.meu-arquivo {
+  margin: auto;
+  background: #A7DAF4;
+  width: 235px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  z-index: 1;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+
+.meu-arquivo a {
+  text-decoration: none;
+  text-align: right;
+}
+
+.meu-arquivo p{
+  color: #DF0209;
+}
+
+.my-4{
+  margin: 450px auto 0 auto;
+  border-radius: 8px;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 100%;
+}
+
+/*card 3*/
+
+.cardimg {
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+}
+
+.cardapio{
+  width: 300px;
+  margin: 10px 30px 10px 30px;
+  background: #A7DAF4;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.cardapio p{
+  font-size: 14px;
+  color:#3BA12F;
+}
+
+.cardapio strong{
+  margin: 0 0 0 20px;
+}
+
+.descricao{
+  width: 240px;
+  display: flex;
+  background: #F5F5F5;
+  border-radius: 6px;
+  margin:10px auto 10px auto
+}
+
+.descricao p{
+  color: #000000;
+}
+
+#botao{
+  background-color: #009CDE; /* Green */
+  margin: 10px 0 0 0;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+}
+
+#document {
+  background-color: #009CDE;
+  margin: auto;
+  border: none;
+  color: white;
+  padding: 10px 25px 10px 25px;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 12px;
+  height: 20px;
+  width: 150px;
+}
+
+label{
+    cursor: pointer;
+}
+
+#document::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+#document::before {
+  content: 'Selecionar arquivo';
+  display: flex;
+  background-color: #009CDE;
+  border: none;
+  color: white;
+  margin: auto;
+  font-size: 16px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.custom-file-input {
+    position: absolute;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+
+  .custom-file-label {
+    cursor: pointer;
+    background-color: #009CDE;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 12px;
+  }
+
+  /* Estilo para o nome do arquivo selecionado */
+  .file-name {
+    margin-top: 10px;
+  }
+
+#botao-label{
+    pointer-events: none;
+}
+
+footer{
+  padding: 100px;
+}
+
+#imagem-animada{
+  margin: 0 0 -10px 10px;
+  width: 40px;
+  height: 40px;
+  display: none;
+  transition: opacity 0.9s ease-in-out;
+}
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <!-- Menu acima-->
+    <div class="main">
+      <navbar class="navbar">
+        <div class="esquerda-nav">
+          <div onclick="openNav()"><img src="{{asset('/imagens/icon menu.png')}}" class="menu-azul"></div>
+          <div><img src="{{asset('/imagens/creche.png')}}" class="logo-navbar"></div>
+        </div>
+        <div class="direita-nav">
+          <div class="texto-user">
+            <h5><strong>Aluno(a)</strong></h5>
+          </div>
+          <div><img src="{{asset('/imagens/icon aluna.png')}}" class="logo-user"></div>
+        </div>
+      </navbar>
+  
+      <!--Menu lateral-->
+      <div id="mySidenav" class="sidenav">
+        <div class="side">
+          <a href="javascript:void(0)" onclick="closeNav()"><img src="{{asset('/imagens/icon menu.png')}}" class="menu-cinza"></a>
+          <div><img src="{{asset('/imagens/creche.png')}}" class="logo-sidebar"></div>
+        </div>
+        <div class="iten-menu">
+          <div class="retangulo">
+            <a href="{{ url('/calendario')}}"><img src="{{asset('/imagens/icon calendario cinza.png')}}">
+              <p>Calendario</p>
+            </a>
+          </div>
+  
+          <div class="retangulo">
+            <a href="{{ url('/financas/Financa')}}"><img src="{{asset('/imagens/icon financeiro cinza.png')}}">
+              <p>Financeiro</p>
+            </a>
+          </div>
+          </a>
+  
+          <div class="retangulo">
+            <a href="{{ url('/home')}}"><img src="{{asset('/imagens/icon home azul.png')}}">
+              <p>Home</p>
+            </a>
+          </div>
+  
+          <div class="retangulo">
+            <a href="{{ url('/saude')}}"><img src="{{asset('/imagens/icon saude cinza.png')}}">
+              <p>Saúde</p>
+            </a>
+          </div>
+  
+  
+          <div class="retangulo">
+            <a href="{{ url('/perfil')}}"><img src="{{asset('/imagens/icon user cinza.png')}}">
+              <p>Perfil</p>
+            </a>
+          </div>
+  
+          <div class="retangulo">
+            <a href="{{ url('/usuarios/')}}"><img src="{{asset('/imagens/cadeado.png')}}">
+              <p>Admin</p>
+            </a>
+          </div>
+        </div>
+  
+  
+  
+        <!-- Footer do menu lateral -->
+        <div class="footer-menu">
+          <a href="{{ url('logout')}}"><img src="{{asset('/imagens/sair.png')}}" class="sair">
+            <p>Sair</p>
+          </a>
+        </div>
+  
+        <div class="copyriht">
+          <img src="{{asset('/imagens/icon_copyright.png')}}" class="copyright">
+          <p><strong>2023 FROM NEWPATH</strong></p>
+        </div>
+      </div>
+  
+      <!--Ficha, Atestado e cardápio-->
+      <div class="invisible">
+        @foreach($fichas as $value)
+        <div class="cards" id="ficha-medica">
+          <img src="{{asset('/imagens/icon ficha medica.png')}}">
+          <p>Ficha Médica</p>
+          <div class="texto-expandido">
+            <h1>Resumo</h1>
+            <div class="detalhe">
+              <div class="info"><img src="{{asset('/imagens/boneco.png')}}">
+                <p class="altura-peso">Altura e peso</p>
+              </div>
+  
+              <div class="centro-info">
+                <p class="numero"><strong>{{$value->altura}}</strong></p>
+                <p class="cm">cm</p>
+                <p class="numero"><strong>{{$value->peso}}</strong></p>
+                <div class="kg">
+                  <p>kg</p>
+                </div>
+              </div>
+              <div class="data">fev de 2023</div>
+  
+            </div>
+  
+            <div class="detalhe">
+              <div class="info"><img src="{{asset('/imagens/amendoim.png')}}">
+                <p>Alergias</p>
+              </div>
+              <div class="centro-info">
+                <div class="alergias">
+                  <p>{{$value->alergias}}</p>
+                </div>
+              </div>
+              <div class="data">fev de 2023</div>
+            </div>
+  
+            <div class="detalhe">
+              <div class="info"><img src="{{asset('/imagens/pilula.png')}}">
+                <p>Medicamentos</p>
+              </div>
+              <div class="centro-info">
+                <div class="medicamentos">
+                  <p>{{$value->medicamentos}}</p>
+                </div>
+              </div>
+              <div class="data">fev de 2023</div>
+            </div>
+  
+            <div class="detalhe">
+              <div class="info"><img src="{{asset('/imagens/sangue.png')}}">
+                <p>Tipo Sanguineo</p>
+              </div>
+              <div class="centro-info">
+                <div class="sangue">
+                  <p class="o">{{$value->tipo_sanguineo}}</p>
+                </div>
+              </div>
+              <div class="data">fev de 2023</div>
+            </div>
+  
+            <div class="detalhe">
+              <div class="info"><img src="{{asset('/imagens/vacinacao.png')}}">
+                <p>Vacinas</p>
+              </div>
+              <div class="vacinas">
+                <div class="sarampo">
+                  <p>Sarampo</p>
+                </div>
+                <div class="febre">
+                  <p>Febre Amarela</p>
+                </div>
+              </div>
+              <div class="data">fev de 2023</div>
+            </div>
+  
+            <div class="detalhe">
+              <div class="info"><img src="{{asset('/imagens/marcador.png')}}">
+                <p>Observações</p>
+              </div>
+              <div class="centro-info">
+                <div class="observacao">
+                  <p>{{$value->observacoes}}</p>
+                </div>
+              </div>
+              <div class="data">fev de 2023</div>
+            </div>
+          </div>
+        </div>
+        @endforeach
+  
+  
+        <div class="cards" id="divClicavel">
+          <img src="{{ asset('/imagens/icon_atestados.png') }}">
+          <p>Atestado</p>
+          <div class="texto-expandido">
+            <form action="{{ route('upload_docs') }}" method="post" enctype="multipart/form-data" class="my-4">
+              @csrf
+              <div class="form-group">
+                <label for="document" class="custom-file-label">
+                  Selecionar arquivo
+                </label>
+                <input type="file" name="document" id="document" class="custom-file-input">
+              </div>
+              <div class="enviar">
+                <label for="submit">
+                  <button type="submit" class="btn btn-primary" id="botao">Enviar</button>
+                </label>
+              </div>
+            </form>
+            <img src="imagens/salvo.png" id="imagem-animada">
+          </div>
+        </div>
+  
+        <div class="cards">
+          <img src="{{asset('/imagens/icon cardapio.png')}}">
+          <p>Cardápio</p>
+          <div class="texto-expandido">
+            <div class="cardapio">
+              <p><strong>Colocação</strong></p>
+              <div class="descricao">
+                <p>Mini pão francês com manteiga;<br> Café com leite</p>
+              </div>
+            </div>
+            <div class="cardapio">
+              <p><strong>Lanche da manhã</strong></p>
+              <div class="descricao">
+                <p>Biscoito maionese;<br> Suco de maracujá</p>
+              </div>
+            </div>
+            <div class="cardapio">
+              <p><strong>Almoço</strong></p>
+              <div class="descricao">
+                <p>Arroz, Feijão preto, Carne moída, Macarrão a bolonhesa;<br><br>
+                  Suco: Limonada;<br><br>
+                  Sobremesa: Maçã
+                </p>
+              </div>
+            </div>
+            <div class="cardapio">
+              <p><strong>Lanche da Tarde</strong></p>
+              <div class="descricao">
+                <p>Duo de frutas (maçã e banana)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer></footer>
+    <script>
+        /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+          document.getElementById("main").style.marginLeft = "250px";
+          document.body.style.backgroundColor = "rgba(0,0,0,0.0)";
+        }
+  
+        /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+          document.getElementById("main").style.marginLeft = "0";
+          document.body.style.backgroundColor = "white";
+        }
+  
+        const cards = document.querySelectorAll('.cards');
+
+        cards.forEach(card => {
+        card.addEventListener('click', () => {
+    const textoExpandido = card.querySelector('.texto-expandido');
+    card.classList.toggle('expandido');
+    textoExpandido.classList.toggle('mostrar');
+    card.classList.toggle('card-normal');
+  });
+});
+
+var divClicavel = document.getElementById('divClicavel');
+var elementosInternos = divClicavel.querySelectorAll('input, button, select, label'); // Adicione outros elementos internos, se necessário
+
+elementosInternos.forEach(elemento => {
+  elemento.addEventListener('click', function(event) {
+    event.stopPropagation();
+  });
+});
+
+function validarFormulario() {
+  var inputFile = document.getElementById('document');
+  if (inputFile.files.length === 0) {
+    alert('Selecione um arquivo');
+    return false;
+  } else {
+    var botaoEnviar = document.getElementById('botao');
+    botaoEnviar.innerText = 'Enviado';
+    
+    //caso o código abaixo não funcione
+    //window.imagemSalva = "{{ asset('imagem/salvo.png') }}";
+    //var imagemEnviado = document.createElement('img');
+    //imagemEnviado.src = window.imagemSalva;
+
+    var imagemEnviado = document.createElement('img');
+    imagemEnviado.src = './imagem/salvo.png'; // Defina o caminho para a imagem desejada
+
+    var divBotao = document.getElementById('divClicavel');
+    divBotao.appendChild(imagemEnviado);
+    return true;
+  }
+}
+
+document.getElementById('botao').addEventListener('click', function(event) {
+  event.preventDefault(); // Impede o comportamento padrão de enviar o formulário
+
+  var imagemAnimada = document.getElementById('imagem-animada');
+  imagemAnimada.style.display = 'inline-block';
+  imagemAnimada.style.opacity = 1;
+
+  setTimeout(function() {
+    imagemAnimada.style.opacity = 0;
+  }, 2000);
+});
+
+var imagemAnimada = document.getElementById('imagem-animada');
+imagemAnimada.addEventListener('transitionend', function() {
+  if (imagemAnimada.style.opacity === '0') {
+    imagemAnimada.style.display = 'none';
+  }
+});
+
+document.getElementById('document').addEventListener('change', function(e) {
+    var fileName = e.target.files[0].name;
+    document.getElementById('document-label').textContent = fileName;
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+ 
+
+        
+  
+        // // document.getElementById('img-1').addEventListener('click', function() {
+        // // document.getElementById('menu-lateral').style.left = '0'; 
+        // });
+      </script>
+</body>
+</html>
